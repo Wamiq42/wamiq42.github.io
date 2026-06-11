@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Echo Room VR | Wamiq Uddin</title>
+	<meta name="description" content="Echo Room VR — an original echolocation puzzle game for Meta Quest, designed and built solo by Wamiq Uddin. Play blind. See with sound." />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+	<nav class="nav">
+		<div class="nav-inner">
+			<a href="../index.html" class="nav-logo">Wamiq Uddin<span>.</span></a>
+			<ul class="nav-links">
+				<li><a href="../index.html#personal">Personal Work</a></li>
+				<li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<header class="detail-hero">
+		<div class="container">
+			<a href="../index.html#personal" class="back">← Back to personal projects</a>
+			<p class="role-label">Original concept — designed &amp; built solo</p>
+			<h1>Echo Room VR <span class="badge">In development</span></h1>
+			<div class="meta-row">
+				<span><strong>Genre:</strong> Echolocation puzzle</span>
+				<span><strong>Platform:</strong> Meta Quest</span>
+				<span><strong>Engine:</strong> Unity · OpenXR · XR Interaction Toolkit</span>
+			</div>
+			<div class="tags">
+				<span class="tag">Shaders</span>
+				<span class="tag">Spatial Audio</span>
+				<span class="tag">Mic Input</span>
+				<span class="tag">VR Interaction</span>
+				<span class="tag">Game Design</span>
+			</div>
+		</div>
+	</header>
+
+	<main class="detail-body">
+		<div class="container">
+			<h2>The idea</h2>
+			<p>
+				You are in a pitch-black room. You can't see — but you can make sound.
+				Press a button, snap, or <strong>shout into the mic</strong>, and a pulse of sound
+				ripples outward, briefly lighting up the walls, edges, and objects it touches
+				before everything fades back to darkness. You explore, remember what you saw,
+				find the hidden switches, and open the door to the next room.
+			</p>
+			<p><strong>Play blind. See with sound.</strong></p>
+
+			<div class="sonar-banner">
+				<div class="sonar-visual">
+					<span class="ring"></span>
+					<span class="ring"></span>
+					<span class="ring"></span>
+					<span class="dot"></span>
+					<span class="vlabel">PING&nbsp;·&nbsp;REVEAL&nbsp;·&nbsp;REMEMBER</span>
+				</div>
+			</div>
+			<p style="font-size: 0.85rem; text-align: center; margin-top: -20px;">
+				<em>In a game about darkness, screenshots don't say much — this is the game's actual
+				color language: a sonar pulse on the void. Footage coming once the first rooms are polished.</em>
+			</p>
+
+			<h2>Design pillars</h2>
+			<ul class="features">
+				<li><strong>Darkness is the default.</strong> The world is hidden until you reveal it — light is a reward for acting, never free.</li>
+				<li><strong>Sound is sight.</strong> Every reveal is tied to a sound the player or world made. The fantasy is echolocation.</li>
+				<li><strong>Calm, eerie, readable.</strong> Tense and atmospheric, not horror — and the important things are always readable when revealed.</li>
+			</ul>
+
+			<h2>What's built so far</h2>
+			<p>
+				The hardest, most differentiating part — the echolocation sensory loop — is working:
+			</p>
+			<ul class="features">
+				<li>
+					<strong>Physically accurate echoes.</strong>
+					Pings reflect off geometry and return as spatial 3D audio, delayed by
+					<em>distance ÷ 343 m/s</em> — the real speed of sound. Far walls genuinely answer later.
+				</li>
+				<li>
+					<strong>Sonar reveal shader.</strong>
+					A custom shader sweeps a teal pulse across surfaces the ping touches,
+					then fades them back into the void.
+				</li>
+				<li>
+					<strong>Shout to ping.</strong>
+					Microphone input triggers pings — snap your fingers or call out, and the
+					room answers.
+				</li>
+				<li>
+					<strong>VR interaction &amp; puzzles.</strong>
+					Physical button presses, door logic, and a puzzle framework binding them
+					together — the first room type (logic rooms) is playable.
+				</li>
+				<li>
+					<strong>Architecture built to grow.</strong>
+					Interface-driven design (input sources, echo interactables, puzzle elements)
+					and ScriptableObject-driven level data, so new rooms and mechanics slot in
+					without rewrites.
+				</li>
+			</ul>
+
+			<h2>What's next</h2>
+			<ul class="features">
+				<li><strong>Maze rooms</strong> — blueprints are designed; exploration by echo is the next playable layer.</li>
+				<li><strong>Echo materials</strong> — pitch and volume varying by surface and size, and echo-absorbing materials.</li>
+				<li><strong>More room types</strong> — pattern rooms (memorize and mimic sound sequences) and stealth rooms.</li>
+				<li><strong>Comfort &amp; polish</strong> — teleport locomotion, haptics, and an in-VR radial menu.</li>
+			</ul>
+		</div>
+	</main>
+
+	<footer>
+		<div class="container">
+			© 2026 Wamiq Uddin · <a href="../index.html">wamiq42.github.io</a>
+		</div>
+	</footer>
+
+	<script src="../assets/js/main.js"></script>
+</body>
+</html>

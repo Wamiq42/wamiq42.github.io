@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Baseball X — Case Study | Wamiq Uddin</title>
+	<meta name="description" content="Case study: Baseball X, a physics-accurate VR baseball simulator on Meta Quest, developed solely by Wamiq Uddin at XRev Studios." />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+	<nav class="nav">
+		<div class="nav-inner">
+			<a href="../index.html" class="nav-logo">Wamiq Uddin<span>.</span></a>
+			<ul class="nav-links">
+				<li><a href="../index.html#projects">Projects</a></li>
+				<li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<header class="detail-hero">
+		<div class="container">
+			<a href="../index.html#projects" class="back">← Back to projects</a>
+			<p class="role-label">Lead Developer — sole programmer</p>
+			<h1>Baseball X</h1>
+			<div class="meta-row">
+				<span><strong>Studio:</strong> XRev Studios</span>
+				<span><strong>Platform:</strong> Meta Quest</span>
+				<span><strong>Engine:</strong> Unity (VR)</span>
+				<span><strong>Released:</strong> Dec 2024</span>
+			</div>
+			<div class="tags">
+				<span class="tag">VR Physics</span>
+				<span class="tag">Gameplay Architecture</span>
+				<span class="tag">Backend</span>
+				<span class="tag">Companion App</span>
+				<span class="tag">Analytics</span>
+			</div>
+		</div>
+	</header>
+
+	<main class="detail-body">
+		<div class="container">
+			<h2>Overview</h2>
+			<p>
+				Baseball X is a physics-accurate VR baseball simulator that lets players train,
+				compete, and analyze their swing in real time. Unlike typical VR sports titles
+				that rely on canned animations, Baseball X uses true bat–ball collision physics
+				for realistic contact and feedback.
+			</p>
+			<p>
+				I was <strong>solely responsible for the game's development</strong>. The project grew out of
+				XRev's Cricket X codebase, but baseball is a fundamentally different sport to simulate —
+				so much of my work was rebuilding core systems rather than reskinning them.
+			</p>
+
+			<figure class="shot">
+				<img src="../images/baseball-x-banner.webp" alt="Baseball X key art — batter with a Meta Quest headset in a floodlit stadium" />
+			</figure>
+			<figure class="shot">
+				<img src="../images/baseball-x-gameplay.webp" alt="Baseball X gameplay — batting view from home plate with pitch trajectory line" />
+				<figcaption>Facing a delivery at home plate — the white line traces the incoming pitch.</figcaption>
+			</figure>
+
+			<h2>What I built</h2>
+			<ul class="features">
+				<li>
+					<strong>Bat–ball physics, rebuilt from scratch.</strong>
+					Cricket bats are flat; baseball bats are round. That single difference invalidates
+					the entire contact model — deflection angles, sweet-spot behavior, and feedback all
+					had to be re-engineered for cylindrical contact.
+				</li>
+				<li>
+					<strong>Core gameplay systems and architecture.</strong>
+					The fielding system, scoring system, and multiple game modes — everything code-side,
+					including the architectural rework needed to keep the game maintainable as it grew.
+				</li>
+				<li>
+					<strong>Environment &amp; animation integration.</strong>
+					Set up everything delivered by the 3D artists (stadium and environment assets) and
+					the animation team, wiring their work into the game.
+				</li>
+				<li>
+					<strong>Shader-based impostor crowds.</strong>
+					Stadium crowds rendered with the impostor technique used in major sports games:
+					flat geometry whose materials and shaders make each spectator read as a true 3D
+					object from any angle — filling the stands at a fraction of the cost of real meshes.
+				</li>
+				<li>
+					<strong>Backend integration.</strong>
+					Database integration, player accounts, and login — connecting the game to
+					server-side services.
+				</li>
+				<li>
+					<strong>Companion app.</strong>
+					A separate app that lets a coach or friend set up pitches remotely instead of inside VR.
+					It visualizes the pitcher and pitch trajectory, replays the player's last shot, and
+					surfaces swing analytics.
+				</li>
+				<li>
+					<strong>Website integration (in progress).</strong>
+					The Baseball X website is being built to connect with the game for stats and analysis.
+				</li>
+			</ul>
+
+			<h2>Links</h2>
+			<div class="store-links">
+				<a href="https://www.meta.com/experiences/baseball-x/26275725068738760/" class="btn btn-primary" target="_blank" rel="noopener">Meta Quest Store</a>
+				<a href="https://baseballx.co/" class="btn btn-ghost" target="_blank" rel="noopener">baseballx.co</a>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<div class="container">
+			© 2026 Wamiq Uddin · <a href="../index.html">wamiq42.github.io</a>
+		</div>
+	</footer>
+
+	<script src="../assets/js/main.js"></script>
+</body>
+</html>
