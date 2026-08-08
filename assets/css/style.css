@@ -14,6 +14,8 @@
 	--accent: #7c5cff;
 	--accent-2: #2dd4ff;
 	--accent-soft: rgba(124, 92, 255, 0.12);
+	--shipped: #3ddc97;
+	--shipped-soft: rgba(61, 220, 151, 0.12);
 	--gradient: linear-gradient(120deg, #7c5cff, #2dd4ff);
 	--radius: 14px;
 	--maxw: 1100px;
@@ -45,6 +47,16 @@ a { color: var(--accent-2); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 img { max-width: 100%; display: block; }
+
+code {
+	font-family: var(--font-mono);
+	font-size: 0.88em;
+	padding: 2px 6px;
+	border-radius: 5px;
+	background: var(--surface-2);
+	border: 1px solid var(--border);
+	color: var(--text);
+}
 
 .container { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 
@@ -332,6 +344,13 @@ section.block.alt { background: var(--bg-soft); }
 	color: var(--accent-2);
 	margin-left: 8px;
 	vertical-align: middle;
+}
+
+/* Shipped and buyable — distinct from the in-development badge */
+.badge.released {
+	border-color: var(--shipped);
+	color: var(--shipped);
+	background: var(--shipped-soft);
 }
 
 /* ---------- Featured project ---------- */

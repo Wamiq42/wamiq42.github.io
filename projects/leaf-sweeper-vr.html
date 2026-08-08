@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Leaf Sweeper VR: Cozy Cleanup | Wamiq Uddin</title>
+	<meta name="description" content="Leaf Sweeper VR: Cozy Cleanup — a cozy garden cleanup game for Meta Quest, designed and built solo by Wamiq Uddin in Unity 6. Custom OpenXR refresh-rate feature, UI Toolkit world-space HUD, and 12,400 collectible leaves inside a Quest frame budget." />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+	<nav class="nav">
+		<div class="nav-inner">
+			<a href="../index.html" class="nav-logo">Wamiq Uddin<span>.</span></a>
+			<ul class="nav-links">
+				<li><a href="../index.html#personal">Personal Work</a></li>
+				<li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<header class="detail-hero">
+		<div class="container">
+			<a href="../index.html#personal" class="back">← Back to personal projects</a>
+			<p class="role-label">Solo project — design, code and release</p>
+			<h1>Leaf Sweeper VR: Cozy Cleanup <span class="badge released">Released</span></h1>
+			<div class="meta-row">
+				<span><strong>Platform:</strong> Meta Quest 2 / 3 / 3S / Pro</span>
+				<span><strong>Engine:</strong> Unity 6 (6000.3.8f1) · URP</span>
+				<span><strong>XR:</strong> OpenXR · XR Interaction Toolkit 3.3.1</span>
+				<span><strong>Build:</strong> IL2CPP · ARM64 · Android SDK 29–34</span>
+				<span><strong>Status:</strong> Shipped, v1.1</span>
+			</div>
+			<div class="tags">
+				<span class="tag">VR Interaction</span>
+				<span class="tag">UI Toolkit</span>
+				<span class="tag">OpenXR</span>
+				<span class="tag">Performance</span>
+				<span class="tag">Game Design</span>
+				<span class="tag">Shipped</span>
+			</div>
+		</div>
+	</header>
+
+	<main class="detail-body">
+		<div class="container">
+			<h2>The idea</h2>
+			<p>
+				Autumn has buried a garden in leaves, and clearing it is the whole game. You gather
+				leaves into a trash bag you physically carry, empty each full bag into the bin, and
+				take an area from chaos to spotless. No timers, no fail state — the satisfaction has
+				to come entirely from how the cleaning itself feels, which puts all the design weight
+				on the interaction model.
+			</p>
+			<p>
+				It's also the first thing I've taken end to end on my own: concept, systems,
+				art integration, build configuration, and a post-launch patch driven by the
+				shipped build.
+			</p>
+
+			<figure class="shot">
+				<video controls preload="metadata" playsinline poster="../images/leaf-sweeper-vr-key-art.webp">
+					<source src="../assets/leaf-sweeper-vr-trailer.mp4" type="video/mp4" />
+					Your browser doesn't support embedded video.
+				</video>
+				<figcaption>Trailer — the three tools, the bag, and the five areas in motion.</figcaption>
+			</figure>
+
+			<h2>What I built</h2>
+			<p>
+				Everything. There was no team, no publisher, and no existing codebase to start from —
+				the scope below is the whole project.
+			</p>
+			<ul class="features">
+				<li>
+					<strong>Design.</strong>
+					The core loop, the five-area progression, the coin economy and shop, and the
+					decision that each tool had to be a distinct interaction model rather than a
+					stat upgrade — which is what made the game worth building and also the most
+					expensive constraint to hold.
+				</li>
+				<li>
+					<strong>VR interaction systems.</strong>
+					Direct hand grabbing, the rake's physical pile that survives being dragged
+					across a garden, the blower's wide-cone sweep, and the carried bag that all
+					three tools feed into.
+				</li>
+				<li>
+					<strong>Progression and persistence.</strong>
+					Area unlocks, completion tracking, the shop, and a save system carrying coins,
+					tool ownership, unlocks and tutorial state between sessions.
+				</li>
+				<li>
+					<strong>Performance work for the Quest frame budget.</strong>
+					The active-area model, preview rendering for inactive areas, and proximity
+					culling of leaf interaction — the systems that let ~12,400 collectible objects
+					exist without the physics cost scaling with them.
+				</li>
+				<li>
+					<strong>Platform and engine integration.</strong>
+					A custom OpenXR feature for display refresh rate, world-space UI in UI Toolkit,
+					and a Quest-specific URP pipeline with Single Pass Instanced stereo.
+				</li>
+				<li>
+					<strong>Build configuration and release.</strong>
+					IL2CPP / ARM64, Android SDK targets, manifest auditing, store submission,
+					storefront assets and release notes.
+				</li>
+				<li>
+					<strong>Post-launch support.</strong>
+					Playing the shipped build, acting on what it surfaced, and keeping the game
+					updated after release.
+				</li>
+			</ul>
+
+			<h2>How it plays</h2>
+			<p>
+				Five areas — the Barn, Courtyard, Playground, Pool and Lawn — each fully covered.
+				Clearing one unlocks the next and pays out coins, and coins buy better tools from a
+				shop between runs. A save system carries coins, tools owned, area unlocks and
+				tutorial state across sessions.
+			</p>
+			<p>
+				The three tools are genuinely different interaction models rather than reskins of
+				one another — that was the design constraint I set, because a cleaning game whose
+				upgrades only change a number isn't worth building:
+			</p>
+			<ul class="features">
+				<li>
+					<strong>Hands.</strong> Reach out and grab leaves directly. Short range,
+					always available, no upgrade required.
+				</li>
+				<li>
+					<strong>Rake.</strong> Leaves gather and stay physically piled on the rake head.
+					You drag the pile across the garden and tip it into the bag — and it's the only
+					tool that works with the bag set down on the ground rather than carried.
+				</li>
+				<li>
+					<strong>Leaf blower.</strong> A wide cone with long reach that sweeps leaves
+					straight into a bag you're carrying.
+				</li>
+			</ul>
+
+			<div class="gallery">
+				<figure>
+					<img src="../images/leaf-sweeper-vr-before.webp" alt="Leaf Sweeper VR — the yard in front of the house buried in autumn leaves, leaf blower held in the player's hand" />
+					<figcaption>Before — the Courtyard on arrival, leaf blower in hand.</figcaption>
+				</figure>
+				<figure>
+					<img src="../images/leaf-sweeper-vr-after.webp" alt="Leaf Sweeper VR — the same yard fully cleared, bare ground and no leaves remaining" />
+					<figcaption>After — same spot, every leaf collected. That's the whole loop.</figcaption>
+				</figure>
+			</div>
+
+			<div class="gallery">
+				<figure>
+					<img src="../images/leaf-sweeper-vr-playground.webp" alt="Leaf Sweeper VR — raking leaves off a basketball court in the Playground area" />
+					<figcaption>The Playground — raking a court back to its markings.</figcaption>
+				</figure>
+				<figure>
+					<img src="../images/leaf-sweeper-vr-pool.webp" alt="Leaf Sweeper VR — raking leaves from the paved deck around a swimming pool" />
+					<figcaption>The Pool deck — the rake holds its pile as you drag it.</figcaption>
+				</figure>
+			</div>
+
+			<h2>Built for comfort</h2>
+			<p>
+				Cozy games get played in long sessions, so discomfort is a design bug rather than a
+				polish item. Device builds use <strong>physical head turning only</strong> — no snap
+				turn and no continuous turn, the two most common causes of motion discomfort in VR.
+			</p>
+			<p>
+				Locomotion speed is a player setting that can be changed <strong>mid-session from the
+				pause menu</strong>, not buried in a main menu you'd have to quit an area to reach.
+				If the movement doesn't feel right, you fix it where you are.
+			</p>
+
+			<h2>Under the hood</h2>
+			<ul class="features">
+				<li>
+					<strong>A custom OpenXR feature for display refresh rate.</strong>
+					Quest boots its panel at 72 Hz and stays there unless an app asks for more.
+					I implemented the <code>XR_FB_display_refresh_rate</code> extension as a custom
+					OpenXR feature: it queries what the runtime actually supports, requests the best
+					available rate up to 90 Hz, then matches the render target frame rate to it.
+					Nothing is hardcoded — if the extension is missing, it degrades cleanly.
+				</li>
+				<li>
+					<strong>World-space UI built entirely in UI Toolkit.</strong>
+					I built the interface in UXML and USS rather than the usual world-space Canvas
+					approach. The gameplay HUD rides on the left controller as a wrist display and
+					hides itself the moment that hand grabs something, so the panel never fights
+					the object you're holding.
+				</li>
+				<li>
+					<strong>~12,400 individually collectible leaves.</strong>
+					Authored across the five areas — from 356 in the tutorial Barn up to 6,044 in the
+					Lawn. Only the active area's leaves are live; the rest render as lightweight
+					previews so the garden still looks populated. I cull leaf interaction by
+					proximity to the player on a refresh tick, which keeps physics queries bounded
+					no matter how large the area is, and render through a Quest-specific URP
+					pipeline asset with Single Pass Instanced stereo.
+				</li>
+			</ul>
+
+			<h2>After launch</h2>
+			<p>
+				The game is still actively supported. Version 1.1 followed release with balance
+				and gameplay changes driven by the live build, and further updates are ongoing.
+			</p>
+
+			<h2>Links</h2>
+			<div class="store-links">
+				<a href="https://www.meta.com/experiences/leaf-sweeper-vr-cozy-cleanup/1287094717812314/" class="btn btn-primary" target="_blank" rel="noopener">Meta Horizon Store</a>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<div class="container">
+			© 2026 Wamiq Uddin · <a href="../index.html">wamiq42.github.io</a>
+		</div>
+	</footer>
+
+	<script src="../assets/js/main.js"></script>
+</body>
+</html>
