@@ -1,0 +1,285 @@
+/* ============================================
+   Particle Odyssey homepage — chapters over a fixed particle stage.
+   Builds on style.css (tokens, nav, buttons, tags, timeline, contact list).
+   ============================================ */
+
+html { scroll-behavior: auto; }
+body { background: var(--bg); overflow-x: hidden; }
+
+.stage { position: fixed; inset: 0; z-index: 0; }
+.stage canvas { display: block; width: 100%; height: 100%; }
+.site { position: relative; z-index: 1; }
+.nav { z-index: 30; }
+
+/* Without WebGL the page keeps its content over a soft gradient */
+html.no-webgl body {
+	background:
+		radial-gradient(circle at 78% 30%, rgba(124, 92, 255, 0.22), transparent 55%),
+		radial-gradient(circle at 15% 85%, rgba(45, 212, 255, 0.12), transparent 50%),
+		var(--bg);
+	background-attachment: fixed;
+}
+
+/* ---------- Chapters ---------- */
+
+.chapter {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	padding: 110px 0 90px;
+	position: relative;
+}
+.chapter .container { width: 100%; }
+.panel { max-width: 500px; position: relative; }
+.chapter.right .panel { margin-left: auto; }
+.chapter.wide .panel { max-width: 660px; }
+.hero-chapter .panel { max-width: 580px; }
+
+.panel.glass {
+	background: rgba(11, 15, 23, 0.66);
+	border: 1px solid rgba(255, 255, 255, 0.07);
+	border-radius: 20px;
+	padding: 32px;
+	backdrop-filter: blur(14px) saturate(1.2);
+	-webkit-backdrop-filter: blur(14px) saturate(1.2);
+	box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.kicker {
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--accent-2);
+	margin-bottom: 14px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.kicker::before { content: ""; width: 26px; height: 1px; background: currentColor; flex: none; }
+
+.chapter h1 {
+	font-family: var(--font-head);
+	font-size: clamp(3.2rem, 9vw, 7rem);
+	line-height: 0.92;
+	letter-spacing: -0.03em;
+	margin-bottom: 22px;
+}
+.chapter h2 {
+	font-family: var(--font-head);
+	font-size: clamp(2rem, 4.4vw, 3.2rem);
+	line-height: 1.04;
+	letter-spacing: -0.02em;
+	margin-bottom: 14px;
+}
+.chapter .tagline { font-size: clamp(1.1rem, 2vw, 1.35rem); color: var(--muted); margin-bottom: 16px; max-width: 470px; }
+.chapter .tagline strong { color: var(--text); }
+.chapter .lede { color: var(--muted); font-size: 0.98rem; max-width: 470px; margin-bottom: 26px; }
+.chapter p.sub { color: var(--muted); }
+.btn.small { padding: 9px 18px; font-size: 0.85rem; }
+
+/* Experience: the site's timeline, tightened for a panel */
+.chapter .timeline { margin-top: 22px; }
+.chapter .timeline > li { padding-bottom: 22px; }
+.chapter .timeline ul { font-size: 0.88rem; }
+
+/* Professional work: one row per title */
+.projects { display: grid; gap: 12px; margin-top: 22px; }
+.proj {
+	display: grid;
+	grid-template-columns: 168px 1fr;
+	gap: 16px;
+	padding: 10px;
+	border-radius: 14px;
+	background: rgba(19, 26, 42, 0.72);
+	border: 1px solid var(--border);
+	transition: border-color 0.2s, transform 0.25s var(--ease-out);
+}
+.proj:hover { border-color: var(--accent); transform: translateX(4px); }
+.proj img { width: 168px; height: 100%; min-height: 100px; object-fit: cover; border-radius: 10px; display: block; }
+.proj .role-label { margin-bottom: 4px; }
+.proj h3 { font-size: 1.06rem; margin-bottom: 4px; }
+.proj p { font-size: 0.84rem; color: var(--muted); line-height: 1.5; margin-bottom: 8px; }
+.proj .links { display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.84rem; font-weight: 600; }
+.proj .links a { color: var(--accent-2); }
+.proj .links a::after { content: " →"; }
+.proj.featured-row { border-color: rgba(124, 92, 255, 0.5); background: linear-gradient(120deg, rgba(124, 92, 255, 0.14), rgba(19, 26, 42, 0.72) 60%); }
+.proj .tags { margin: 2px 0 10px; }
+.proj .tag { font-size: 0.68rem; padding: 3px 8px; }
+
+/* A whole project row opens its page: the row's main link stretches over it, its other links sit on top */
+.proj { position: relative; }
+.proj a.stretched::before { content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: 1; }
+.proj .links a:not(.stretched) { position: relative; z-index: 2; }
+.proj:has(a.stretched:focus-visible) { outline: 2px solid var(--accent-2); outline-offset: 3px; }
+
+/* Personal projects: one chapter each */
+.shot-card { margin: 4px 0 18px; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); aspect-ratio: 16 / 9; background: #05070c; }
+.shot-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+a.shot-card { display: block; }
+.chapter h2 a { color: inherit; }
+.chapter h2 a:hover { color: var(--edge, var(--accent-2)); text-decoration: none; }
+.shot-card .sonar-visual { height: 100%; }
+.chapter .role-label { margin-bottom: 6px; }
+.chapter .badge { margin-left: 10px; font-size: 0.62rem; vertical-align: 0.5em; }
+.panel .actions { margin-top: 18px; }
+.also {
+	margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border);
+	font-size: 0.88rem; color: var(--muted);
+}
+.also b { color: var(--text); }
+
+/* Skills */
+.chapter .skills-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+.chapter .skill-group { padding: 18px; background: rgba(19, 26, 42, 0.72); }
+
+/* Contact */
+.chapter .contact-list { margin-top: 22px; }
+.site-footer { margin-top: 28px; font-size: 0.8rem; color: var(--muted); }
+
+/* ---------- Interactive panels (main.js sets the variables) ----------
+   Each glass panel is a slab: angled slightly toward the particles at rest, tilting toward the cursor with a
+   glare and an edge light following it, its contents shifting at different depths, and swinging in on arrival */
+
+[data-chapter="experience"], [data-chapter="skills"] { --edge: #9a82ff; }
+[data-chapter="personal-leaf"] { --edge: #ff8a3d; }
+[data-chapter="personal-market"] { --edge: var(--shipped); }
+[data-chapter="personal-skate"] { --edge: var(--pink, #ff5c8a); }
+
+html.panels-3d .panel.glass {
+	--px: 0; --py: 0; --rx: 0deg; --ry: 0deg; --rest: 0deg; --ex: 0deg; --exx: 0deg; --ez: 0px;
+	transform: perspective(1200px) rotateX(calc(var(--rx) + var(--exx))) rotateY(calc(var(--rest) + var(--ry) + var(--ex))) translateZ(var(--ez));
+	box-shadow:
+		inset 0 1px 0 rgba(255, 255, 255, 0.08),
+		calc(var(--px) * -14px) calc(var(--py) * -14px + 7px) 0 -1px rgba(150, 170, 230, 0.09),
+		calc(var(--px) * -36px) calc(var(--py) * -36px + 34px) 80px rgba(0, 0, 0, 0.42);
+	transition: transform 0.7s var(--ease-out), box-shadow 0.7s var(--ease-out), opacity 0.9s var(--ease-out);
+}
+html.panels-3d .chapter.left .panel.glass { --rest: 2.5deg; }
+html.panels-3d .chapter.right .panel.glass { --rest: -2.5deg; }
+html.panels-3d .chapter.left .panel.glass:not(.in) { --ex: 18deg; --ez: -120px; opacity: 0; }
+html.panels-3d .chapter.right .panel.glass:not(.in) { --ex: -18deg; --ez: -120px; opacity: 0; }
+html.panels-3d .panel.glass.hovering { transition: transform 0.14s linear, box-shadow 0.14s linear, opacity 0.9s; }
+html.panels-3d:not(.panels-live) .panel.glass { transition: none; }
+
+/* Edge light: a 1px ring masked out of a gradient that sits under the cursor */
+html.panels-3d .panel.glass::before,
+html.panels-3d .panel.glass::after {
+	content: "";
+	position: absolute;
+	inset: -1px;
+	border-radius: inherit;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.45s;
+}
+html.panels-3d .panel.glass::before {
+	padding: 1px;
+	background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 0%), var(--edge, var(--accent-2)), transparent 70%);
+	-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+}
+/* Glare across the glass */
+html.panels-3d .panel.glass::after {
+	background: radial-gradient(560px circle at var(--mx, 50%) var(--my, 0%), rgba(255, 255, 255, 0.07), transparent 45%);
+}
+html.panels-3d .panel.glass.hovering::before,
+html.panels-3d .panel.glass.hovering::after { opacity: 1; }
+
+/* Depth inside the slab: headings float above the glass, body text sits close to it */
+html.panels-3d .panel.glass > * {
+	--d: 3;
+	transform: translate3d(calc(var(--px) * var(--d) * -1px), calc(var(--py) * var(--d) * -1px), 0);
+	transition: transform 0.7s var(--ease-out);
+}
+html.panels-3d .panel.glass > .kicker { --d: 16; }
+html.panels-3d .panel.glass > h2 { --d: 12; }
+html.panels-3d .panel.glass > .shot-card, html.panels-3d .panel.glass > .actions { --d: 8; }
+html.panels-3d .panel.glass.hovering > * { transition: transform 0.14s linear; }
+
+/* Press: the slab gives a little and its whole edge flashes, alongside the particle ping */
+html.panels-3d .panel.glass.pressed { animation: panel-press 0.5s var(--ease-out); }
+html.panels-3d .panel.glass.pressed::before { animation: edge-flash 0.65s ease-out; }
+@keyframes panel-press { 30% { scale: 0.985; } }
+@keyframes edge-flash {
+	0% { opacity: 1; background: var(--edge, var(--accent-2)); }
+	100% { opacity: 0; background: var(--edge, var(--accent-2)); }
+}
+
+/* Items inside a panel lift toward you like menu buttons */
+.proj { transition: border-color 0.2s, transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out); }
+.proj:hover {
+	transform: translate3d(4px, -3px, 0) scale(1.012);
+	box-shadow: 0 16px 34px rgba(0, 0, 0, 0.38), 0 0 26px rgba(124, 92, 255, 0.22);
+}
+.proj img { transition: filter 0.3s; }
+.proj:hover img { filter: brightness(1.12) saturate(1.1); }
+
+.chapter .skill-group, .chapter .contact-list li, .chapter .tag, .shot-card {
+	transition: transform 0.3s var(--ease-out), border-color 0.2s, box-shadow 0.3s var(--ease-out), background 0.2s;
+}
+.chapter .skill-group:hover {
+	transform: translateY(-4px);
+	border-color: var(--accent-2);
+	box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35), 0 0 22px rgba(45, 212, 255, 0.16);
+}
+.chapter .tag:hover { transform: translateY(-2px); border-color: var(--accent-2); color: var(--text); }
+.chapter .contact-list li:hover { transform: translateX(6px); }
+.chapter .contact-list li:hover .contact-icon { color: var(--accent-2); box-shadow: 0 0 18px rgba(45, 212, 255, 0.35); }
+.contact-icon { transition: color 0.2s, box-shadow 0.3s; }
+.shot-card img { transition: transform 0.6s var(--ease-out); }
+.shot-card:hover { border-color: var(--edge, var(--accent-2)); box-shadow: 0 0 26px rgba(45, 212, 255, 0.14); }
+.shot-card:hover img { transform: scale(1.04); }
+
+/* Timeline entries: the node lights up and the company name takes the highlight */
+.chapter .timeline > li h3 { transition: color 0.2s; }
+.chapter .timeline > li:hover h3 { color: var(--accent-2); }
+.chapter .timeline > li::before { transition: transform 0.3s var(--ease-out), box-shadow 0.3s; }
+.chapter .timeline > li:hover::before { transform: scale(1.35); box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.2), 0 0 16px var(--accent); }
+
+/* Scroll cue */
+.scroll-cue {
+	position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%);
+	font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+	display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.scroll-cue span { width: 1px; height: 38px; background: linear-gradient(var(--accent-2), transparent); animation: cue 1.8s ease-in-out infinite; transform-origin: top; }
+@keyframes cue { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+
+/* Particle readout and interaction hint */
+.counter, .hint-chip { display: none; }
+html.odyssey-on .counter, html.odyssey-on .hint-chip { display: block; }
+.counter {
+	position: fixed; right: 24px; bottom: 22px; z-index: 20; pointer-events: none;
+	font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.12em; color: var(--muted); text-align: right;
+}
+.counter b { display: block; font-family: var(--font-head); font-size: 1.4rem; color: var(--text); letter-spacing: 0; }
+.hint-chip {
+	position: fixed; left: 24px; bottom: 22px; z-index: 20; pointer-events: none;
+	font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--muted);
+	padding: 8px 12px; border-radius: 999px; background: rgba(8, 11, 18, 0.7); border: 1px solid var(--border);
+	backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.hint-chip b { color: var(--accent-2); font-weight: 500; }
+
+@media (max-width: 760px) {
+	.chapter { align-items: flex-end; padding: 90px 0 70px; }
+	.chapter.hero-chapter { align-items: flex-start; padding-top: 120px; }
+	.panel, .chapter.wide .panel { max-width: none; }
+	.panel.glass { padding: 22px; }
+	.proj { grid-template-columns: 1fr; }
+	.proj img { width: 100%; height: 150px; }
+	.chapter .skills-grid { grid-template-columns: 1fr; }
+	html.odyssey-on .hint-chip { display: none; }
+	.counter { right: 16px; bottom: 14px; }
+	.counter b { font-size: 1.1rem; }
+	/* Full-width panels sit flat on phones; they still swing in */
+	html.panels-3d .chapter.left .panel.glass, html.panels-3d .chapter.right .panel.glass { --rest: 0deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.scroll-cue span { animation: none; }
+	.proj:hover, .chapter .skill-group:hover, .chapter .tag:hover, .chapter .contact-list li:hover,
+	.shot-card:hover img, .chapter .timeline > li:hover::before { transform: none; }
+}

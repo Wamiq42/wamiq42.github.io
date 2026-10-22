@@ -5,6 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Skateboard | Wamiq Uddin</title>
 	<meta name="description" content="Skateboard — a downhill skateboard racing game built solo by Wamiq Uddin as a personal project in Unity." />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Wamiq Uddin" />
+	<meta property="og:title" content="Skateboard | Wamiq Uddin" />
+	<meta property="og:description" content="Skateboard — a downhill skateboard racing game built solo by Wamiq Uddin as a personal project in Unity." />
+	<meta property="og:url" content="https://wamiq42.github.io/projects/skateboard.html" />
+	<meta property="og:image" content="https://wamiq42.github.io/images/og/skateboard.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -12,12 +21,21 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="../assets/css/style.css" />
+	<link rel="stylesheet" href="../assets/css/odyssey.css" />
+	<link rel="stylesheet" href="../assets/css/case.css" />
 </head>
-<body>
+<body data-form="skateboard">
+
+	<div class="stage" aria-hidden="true"></div>
+	<div class="counter" aria-hidden="true"><b id="count">36,864</b>particles · <span id="form">forming</span></div>
+	<div class="hint-chip" aria-hidden="true"><b>MOVE</b> to blow · <b>CLICK</b> to ping</div>
 
 	<nav class="nav">
 		<div class="nav-inner">
 			<a href="../index.html" class="nav-logo">Wamiq Uddin<span>.</span></a>
+			<button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+				<span></span><span></span><span></span>
+			</button>
 			<ul class="nav-links">
 				<li><a href="../index.html#personal">Personal Work</a></li>
 				<li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
@@ -25,15 +43,15 @@
 		</div>
 	</nav>
 
-	<header class="detail-hero">
-		<div class="container">
+	<header class="chapter left case-hero" data-chapter="hero">
+		<div class="container"><div class="panel glass">
 			<a href="../index.html#personal" class="back">← Back to personal projects</a>
 			<p class="role-label">Personal project — solo, end to end</p>
 			<h1>Skateboard</h1>
 			<div class="meta-row">
-				<span><strong>Type:</strong> Downhill racing</span>
-				<span><strong>Engine:</strong> Unity</span>
-				<span><strong>Built:</strong> Solo</span>
+				<span><strong>Type</strong> Downhill racing</span>
+				<span><strong>Engine</strong> Unity</span>
+				<span><strong>Built</strong> Solo</span>
 			</div>
 			<div class="tags">
 				<span class="tag">Physics</span>
@@ -41,34 +59,51 @@
 				<span class="tag">Racing</span>
 				<span class="tag">Unity 3D</span>
 			</div>
-		</div>
+		</div></div>
+		<div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
 	</header>
 
-	<main class="detail-body">
+	<main class="detail-body reading" data-chapter="read">
 		<div class="container">
-			<h2>Overview</h2>
-			<p>
-				A downhill skateboard racing game I built solo as a personal project — scenic
-				mountain roads lined with wind turbines and hot-air balloons, race events against
-				other riders, and physics-driven board control. Personal projects like this are
-				where I experiment with game feel: the things that make speed, balance, and
-				cornering feel right are hard to get from a spec, so I build them myself.
-			</p>
+			<section class="panel glass" id="overview">
+				<p class="kicker">01 / 01</p>
+				<h2>Overview</h2>
+				<p>
+					A downhill skateboard racing game I built solo as a personal project — scenic
+					mountain roads lined with wind turbines and hot-air balloons, race events against
+					other riders, and physics-driven board control. Personal projects like this are
+					where I experiment with game feel: the things that make speed, balance, and
+					cornering feel right are hard to get from a spec, so I build them myself.
+				</p>
 
-			<figure class="shot">
-				<video controls preload="metadata" poster="../images/skateboard-downhill.png">
-					<source src="../videos/skateboard-gameplay.mp4" type="video/mp4" />
-					Your browser doesn't support embedded video.
-				</video>
-				<figcaption>Gameplay capture — a downhill run.</figcaption>
-			</figure>
+				<figure class="shot">
+					<video controls preload="metadata" poster="../images/skateboard-downhill.webp">
+						<source src="../videos/skateboard-gameplay.mp4" type="video/mp4" />
+						Your browser doesn't support embedded video.
+					</video>
+					<figcaption>Gameplay capture — a downhill run.</figcaption>
+				</figure>
 
-			<figure class="shot">
-				<img src="../images/skateboard-race-start.png" alt="Race start line with several riders, sponsor banners, and mountains in the background" />
-				<figcaption>Race event — lined up at the start gate.</figcaption>
-			</figure>
+				<figure class="shot">
+					<img src="../images/skateboard-race-start.webp" alt="Race start line with several riders, sponsor banners, and mountains in the background" />
+					<figcaption>Race event — lined up at the start gate.</figcaption>
+				</figure>
+			</section>
 		</div>
 	</main>
+
+	<section class="chapter left next-level" data-chapter="next" data-form="baseball-x">
+		<div class="container"><div class="panel glass">
+			<a class="panel-link" href="baseball-x.html" tabindex="-1" aria-hidden="true"></a>
+			<p class="kicker">Next level · 01 / 09</p>
+			<h2><a href="baseball-x.html">Baseball X</a></h2>
+			<p class="sub">A physics-accurate VR baseball simulator on Meta Quest, where I was the lead developer.</p>
+			<div class="actions">
+				<a href="baseball-x.html" class="btn btn-primary">Next project →</a>
+				<a href="../index.html#projects" class="btn btn-ghost">All projects</a>
+			</div>
+		</div></div>
+	</section>
 
 	<footer>
 		<div class="container">
@@ -77,5 +112,20 @@
 	</footer>
 
 	<script src="../assets/js/main.js"></script>
+	<script type="importmap">
+		{
+			"imports": {
+				"three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+				"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+			}
+		}
+	</script>
+	<script type="module">
+		// The particles need WebGL2 with float render targets; without them the page stays a plain, readable site
+		const gl = document.createElement('canvas').getContext('webgl2');
+		const ok = gl && gl.getExtension('EXT_color_buffer_float');
+		if (ok) import('../assets/js/odyssey/case.js').catch(() => document.documentElement.classList.add('no-webgl'));
+		else document.documentElement.classList.add('no-webgl');
+	</script>
 </body>
 </html>

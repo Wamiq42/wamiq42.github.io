@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Cricket Reborn | Wamiq Uddin</title>
+	<meta name="description" content="Cricket Reborn — a real-ball cricket simulator by XRev Studios, running at Just Beat It in Karachi. Wamiq Uddin built its original game foundation, operator tablet app, venue TV and booking-to-bay system." />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Wamiq Uddin" />
+	<meta property="og:title" content="Cricket Reborn | Wamiq Uddin" />
+	<meta property="og:description" content="Cricket Reborn — a real-ball cricket simulator by XRev Studios, running at Just Beat It in Karachi. Wamiq Uddin built its original game foundation, operator tablet app, venue TV and booking-to-bay system." />
+	<meta property="og:url" content="https://wamiq42.github.io/projects/cricket-reborn.html" />
+	<meta property="og:image" content="https://wamiq42.github.io/images/og/cricket-reborn.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="../assets/css/style.css" />
+	<link rel="stylesheet" href="../assets/css/odyssey.css" />
+	<link rel="stylesheet" href="../assets/css/case.css" />
+</head>
+<body data-form="cricket-reborn">
+
+	<div class="stage" aria-hidden="true"></div>
+	<div class="counter" aria-hidden="true"><b id="count">36,864</b>particles · <span id="form">forming</span></div>
+	<div class="hint-chip" aria-hidden="true"><b>MOVE</b> to blow · <b>CLICK</b> to ping</div>
+
+	<nav class="nav">
+		<div class="nav-inner">
+			<a href="../index.html" class="nav-logo">Wamiq Uddin<span>.</span></a>
+			<button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+				<span></span><span></span><span></span>
+			</button>
+			<ul class="nav-links">
+				<li><a href="../index.html#projects">Projects</a></li>
+				<li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<header class="chapter left case-hero" data-chapter="hero">
+		<div class="container"><div class="panel glass">
+			<a href="../index.html#projects" class="back">← Back to projects</a>
+			<p class="role-label">Unity Developer — game foundation, tablet app &amp; venue systems</p>
+			<h1>Cricket Reborn</h1>
+			<div class="meta-row">
+				<span><strong>Studio</strong> XRev Studios</span>
+				<span><strong>Venue</strong> Just Beat It, Karachi</span>
+				<span><strong>Runs on</strong> Bay PC · Android tablet · Venue TV</span>
+				<span><strong>Engine</strong> Unity 6 (6000.3.8f1)</span>
+			</div>
+			<div class="tags">
+				<span class="tag">Hardware Integration</span>
+				<span class="tag">Local Networking</span>
+				<span class="tag">Android Kiosk App</span>
+				<span class="tag">Gameplay Systems</span>
+				<span class="tag">Booking Integration</span>
+			</div>
+			<div class="actions">
+				<a href="https://justbeatitworld.com/" class="btn btn-primary" target="_blank" rel="noopener">Book at Just Beat It</a>
+			</div>
+		</div></div>
+		<div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
+	</header>
+
+	<main class="detail-body reading" data-chapter="read">
+		<div class="container">
+			<section class="panel glass" id="the-idea">
+				<p class="kicker">01 / 07</p>
+				<h2>The idea</h2>
+				<p>
+					Cricket Reborn puts a real bat in your hands and a real ball coming at you. A bowling
+					machine in the bay fires the delivery, and on the screen a virtual bowler runs in and
+					releases it at the same instant — so it feels like facing a bowler, not a machine.
+					A camera reads where your shot went, and the game plays out the rest: runs, fielders,
+					commentary and the crowd.
+				</p>
+				<p>
+					It runs in bays at Just Beat It, a rooftop sports, food and music venue in Karachi,
+					where players book a bay online and play solo, head to head, as teams or in tournaments.
+				</p>
+
+				<figure class="shot">
+					<img src="../images/cricket-reborn-sharjah.webp" alt="Cricket Reborn — in-game view of the Sharjah stadium, with the fielders set and the pitch in the foreground" />
+					<figcaption>In the game — Sharjah, with the field set for the next ball.</figcaption>
+				</figure>
+			</section>
+
+			<section class="panel glass" id="building-the-foundation">
+				<p class="kicker">02 / 07</p>
+				<h2>Building the foundation</h2>
+				<p>
+					I joined part-time in January 2026, when the project was a fresh repository, and built
+					much of the original game alongside one other developer:
+				</p>
+				<ul class="features">
+					<li>
+						<strong>Bowlers and the delivery.</strong>
+						Bowler setup and animation handling, release points and the ball.
+					</li>
+					<li>
+						<strong>The field.</strong>
+						Fielders, boundaries, umpires and wickets.
+					</li>
+					<li>
+						<strong>The bowling-machine link.</strong>
+						Passing each delivery's ball data from the game to the machine's manager — the
+						connection between the software and the real ball.
+					</li>
+					<li>
+						<strong>Backend.</strong>
+						Firebase sign-in (including guest play) and real-time game data, with match
+						settings and scores for single-player and one-vs-one.
+					</li>
+					<li>
+						<strong>Presentation.</strong>
+						Commentary and sound managers, the stadium and crowd, fireworks and cinematic shots.
+					</li>
+				</ul>
+			</section>
+
+			<section class="panel glass" id="since-june-from-a-game-to-a-venue-product">
+				<p class="kicker">03 / 07</p>
+				<h2>Since June: from a game to a venue product</h2>
+				<p>
+					When I came back full-time, the job had changed: the game had to run a real venue,
+					every day, with staff who aren't developers. Most of my work since has been on that.
+				</p>
+				<ul class="features">
+					<li>
+						<strong>Local-first bays.</strong>
+						I moved each bay from depending on the cloud to running on the venue's own network.
+						The game PC serves the operator app itself, and the tablet checks the station's
+						health and refuses to start a game until the bay is ready.
+					</li>
+					<li>
+						<strong>The operator tablet app.</strong>
+						Packaged as an Android kiosk app with a staff PIN: players, match setup, team
+						modes, knockout tournaments and live scores — now on version 1.3.1.
+					</li>
+					<li>
+						<strong>The venue TV.</strong>
+						A live score on one 16:9 stage, which works out the big moments of a match on its
+						own from successive score states.
+					</li>
+					<li>
+						<strong>Match modes and flow.</strong>
+						Team innings and alternating multiplayer, catches that can be dropped depending on
+						difficulty, and matches that can be saved and continued after the game closes.
+					</li>
+				</ul>
+
+				<figure class="shot">
+					<img src="../images/cricket-reborn-mcg.webp" alt="Cricket Reborn — in-game view of the Melbourne Cricket Ground, fielders spread across the outfield" />
+					<figcaption>The MCG — one of the stadiums players can choose for a match.</figcaption>
+				</figure>
+			</section>
+
+			<section class="panel glass" id="booking-to-bay">
+				<p class="kicker">04 / 07</p>
+				<h2>Booking to bay</h2>
+				<p>
+					A bay is only useful if the venue can sell its time. I built the system that takes a
+					booking from Just Beat It's website all the way to the bay:
+				</p>
+				<ul class="features">
+					<li>
+						<strong>Bookings reach the bay.</strong>
+						A booking paid on the venue's website arrives on that bay's tablet through the cloud.
+						The game won't start without a started session, and the session ends at the paid time.
+					</li>
+					<li>
+						<strong>Staff stay in control.</strong>
+						Staff can start a booking early, add minutes or end a session, and reception can book
+						walk-ins. Every change is reported back to the venue's ERP, so a bay is never sold twice.
+					</li>
+					<li>
+						<strong>The operations site.</strong>
+						A staff operations website on Vercel with a Turso database, reaching the venue's
+						systems through its Cloudflare-protected gateway.
+					</li>
+					<li>
+						<strong>The venue's booking site.</strong>
+						On justbeatitworld.com itself: PayFast payments, promo codes, multi-hour bookings for
+						padel, futsal and cricket, and contracts for organisations' weekly hours.
+					</li>
+				</ul>
+			</section>
+
+			<section class="panel glass" id="next-jungle-premier-league">
+				<p class="kicker">05 / 07</p>
+				<h2>Next: Jungle Premier League</h2>
+				<p>
+					A new game for kids I'm building on the same idea and system as Cricket Reborn: a jungle
+					league where animal characters bowl and field. It's in development.
+				</p>
+				<div class="store-links" style="margin-top: 0;">
+					<a href="jungle-premier-league.html" class="btn btn-ghost">See Jungle Premier League</a>
+				</div>
+			</section>
+
+			<section class="panel glass" id="the-team">
+				<p class="kicker">06 / 07</p>
+				<h2>The team</h2>
+				<p>
+					Cricket Reborn is a team project at XRev Studios. The camera system that reads each
+					shot, and a large share of the gameplay work, were built by my teammates — this page
+					covers the parts I built.
+				</p>
+			</section>
+
+			<section class="panel glass" id="links">
+				<p class="kicker">07 / 07</p>
+				<h2>Links</h2>
+				<div class="store-links">
+					<a href="https://justbeatitworld.com/" class="btn btn-primary" target="_blank" rel="noopener">Book at Just Beat It</a>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<section class="chapter left next-level" data-chapter="next" data-form="jungle-premier-league">
+		<div class="container"><div class="panel glass">
+			<a class="panel-link" href="jungle-premier-league.html" tabindex="-1" aria-hidden="true"></a>
+			<p class="kicker">Next level · 03 / 09</p>
+			<h2><a href="jungle-premier-league.html">Jungle Premier League</a></h2>
+			<p class="sub">A jungle cricket league for kids, built on the Cricket Reborn system: animal bowlers, fielders and crowd.</p>
+			<div class="actions">
+				<a href="jungle-premier-league.html" class="btn btn-primary">Next project →</a>
+				<a href="../index.html#projects" class="btn btn-ghost">All projects</a>
+			</div>
+		</div></div>
+	</section>
+
+	<footer>
+		<div class="container">
+			© 2026 Wamiq Uddin · <a href="../index.html">wamiq42.github.io</a>
+		</div>
+	</footer>
+
+	<script src="../assets/js/main.js"></script>
+	<script type="importmap">
+		{
+			"imports": {
+				"three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+				"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+			}
+		}
+	</script>
+	<script type="module">
+		// The particles need WebGL2 with float render targets; without them the page stays a plain, readable site
+		const gl = document.createElement('canvas').getContext('webgl2');
+		const ok = gl && gl.getExtension('EXT_color_buffer_float');
+		if (ok) import('../assets/js/odyssey/case.js').catch(() => document.documentElement.classList.add('no-webgl'));
+		else document.documentElement.classList.add('no-webgl');
+	</script>
+</body>
+</html>

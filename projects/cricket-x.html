@@ -5,6 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Cricket X | Wamiq Uddin</title>
 	<meta name="description" content="Cricket X — a VR cricket simulator on Meta Quest. Wamiq Uddin co-developed major systems including fielding, physics optimization, and animation." />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Wamiq Uddin" />
+	<meta property="og:title" content="Cricket X | Wamiq Uddin" />
+	<meta property="og:description" content="Cricket X — a VR cricket simulator on Meta Quest. Wamiq Uddin co-developed major systems including fielding, physics optimization, and animation." />
+	<meta property="og:url" content="https://wamiq42.github.io/projects/cricket-x.html" />
+	<meta property="og:image" content="https://wamiq42.github.io/images/og/cricket-x.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -12,12 +21,21 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="../assets/css/style.css" />
+	<link rel="stylesheet" href="../assets/css/odyssey.css" />
+	<link rel="stylesheet" href="../assets/css/case.css" />
 </head>
-<body>
+<body data-form="cricket-x">
+
+	<div class="stage" aria-hidden="true"></div>
+	<div class="counter" aria-hidden="true"><b id="count">36,864</b>particles · <span id="form">forming</span></div>
+	<div class="hint-chip" aria-hidden="true"><b>MOVE</b> to blow · <b>CLICK</b> to ping</div>
 
 	<nav class="nav">
 		<div class="nav-inner">
 			<a href="../index.html" class="nav-logo">Wamiq Uddin<span>.</span></a>
+			<button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+				<span></span><span></span><span></span>
+			</button>
 			<ul class="nav-links">
 				<li><a href="../index.html#projects">Projects</a></li>
 				<li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
@@ -25,15 +43,15 @@
 		</div>
 	</nav>
 
-	<header class="detail-hero">
-		<div class="container">
+	<header class="chapter left case-hero" data-chapter="hero">
+		<div class="container"><div class="panel glass">
 			<a href="../index.html#projects" class="back">← Back to projects</a>
 			<p class="role-label">Unity Developer — core systems</p>
 			<h1>Cricket X</h1>
 			<div class="meta-row">
-				<span><strong>Studio:</strong> XRev Studios</span>
-				<span><strong>Platform:</strong> Meta Quest</span>
-				<span><strong>Engine:</strong> Unity (VR)</span>
+				<span><strong>Studio</strong> XRev Studios</span>
+				<span><strong>Platform</strong> Meta Quest</span>
+				<span><strong>Engine</strong> Unity (VR)</span>
 			</div>
 			<div class="tags">
 				<span class="tag">Fielding System</span>
@@ -41,60 +59,117 @@
 				<span class="tag">Animation</span>
 				<span class="tag">VR</span>
 			</div>
-		</div>
-	</header>
-
-	<main class="detail-body">
-		<div class="container">
-			<h2>Overview</h2>
-			<p>
-				Cricket X is a VR cricket simulator with realistic physics, built to sharpen batting
-				skills with fully customizable deliveries — swing, spin, speed, bowler type, bounce,
-				and pitch pace. It ships with Challenge, Training, and Demo modes on Meta Quest.
-			</p>
-			<p>
-				The project was large enough that development was split between two developers to speed
-				up system building and fixes. I co-developed several of the game's major systems.
-			</p>
-
-			<figure class="shot">
-				<video controls preload="metadata" poster="../images/cricket-x-bowling.webp">
-					<source src="../videos/cricket-x-gameplay.mp4" type="video/mp4" />
-					Your browser doesn't support embedded video.
-				</video>
-				<figcaption>Gameplay capture — facing a fast bowler from the crease.</figcaption>
-			</figure>
-
-			<h2>My contribution</h2>
-			<ul class="features">
-				<li>
-					<strong>Fielding system.</strong>
-					One of the game's major gameplay systems — fielder behavior and the logic that turns
-					a batted ball into a live cricket play.
-				</li>
-				<li>
-					<strong>Physics system optimization.</strong>
-					Performance and accuracy work on the ball physics to keep the simulation believable
-					at Quest frame rates.
-				</li>
-				<li>
-					<strong>Animation systems.</strong>
-					Animation-related work across the game's characters.
-				</li>
-				<li>
-					<strong>Feature development &amp; support.</strong>
-					Rapid feature implementation and gameplay enhancements alongside the core team
-					whenever the workload demanded it.
-				</li>
-			</ul>
-
-			<h2>Links</h2>
-			<div class="store-links">
+			<div class="actions">
 				<a href="https://www.meta.com/experiences/cricket-x/6986676891412191/" class="btn btn-primary" target="_blank" rel="noopener">Meta Quest Store</a>
 				<a href="https://www.cricketx.net/" class="btn btn-ghost" target="_blank" rel="noopener">cricketx.net</a>
 			</div>
+		</div></div>
+		<div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
+	</header>
+
+	<main class="detail-body reading" data-chapter="read">
+		<div class="container">
+			<section class="panel glass" id="overview">
+				<p class="kicker">01 / 04</p>
+				<h2>Overview</h2>
+				<p>
+					Cricket X is a VR cricket simulator with realistic physics, built to sharpen batting
+					skills with fully customizable deliveries — swing, spin, speed, bowler type, bounce,
+					and pitch pace. It ships with Challenge, Training, and Demo modes on Meta Quest.
+				</p>
+				<p>
+					The project was large enough that development was split between two developers to speed
+					up system building and fixes. I co-developed several of the game's major systems.
+				</p>
+
+				<figure class="shot">
+					<video controls preload="metadata" poster="../images/cricket-x-bowling.webp">
+						<source src="../videos/cricket-x-gameplay.mp4" type="video/mp4" />
+						Your browser doesn't support embedded video.
+					</video>
+					<figcaption>Gameplay capture — facing a fast bowler from the crease.</figcaption>
+				</figure>
+			</section>
+
+			<section class="panel glass" id="my-contribution">
+				<p class="kicker">02 / 04</p>
+				<h2>My contribution</h2>
+				<ul class="features">
+					<li>
+						<strong>Fielding system.</strong>
+						One of the game's major gameplay systems — fielder behavior and the logic that turns
+						a batted ball into a live cricket play.
+					</li>
+					<li>
+						<strong>Physics system optimization.</strong>
+						Performance and accuracy work on the ball physics to keep the simulation believable
+						at Quest frame rates.
+					</li>
+					<li>
+						<strong>Animation systems.</strong>
+						Animation-related work across the game's characters.
+					</li>
+					<li>
+						<strong>Feature development &amp; support.</strong>
+						Rapid feature implementation and gameplay enhancements alongside the core team
+						whenever the workload demanded it.
+					</li>
+				</ul>
+			</section>
+
+			<section class="panel glass" id="back-on-cricket-x-in-2026">
+				<p class="kicker">03 / 04</p>
+				<h2>Back on Cricket X in 2026</h2>
+				<p>Since returning to XRev in June 2026:</p>
+				<ul class="features">
+					<li>
+						<strong>Two-headset local multiplayer (in testing).</strong>
+						Two players bat together on separate headsets over local Wi-Fi: each headset streams
+						its player's head, bat and pads 90 times a second, and the partner's headset mirrors
+						the striker's bowler, fielders and ball.
+					</li>
+					<li>
+						<strong>A live TV spectator view.</strong>
+						A screen beside the player replays each ball from the headset's event stream —
+						bowler, flight, bounce, shot and fielders. I cut its delay behind the headset from
+						about 0.3 s to about 30 ms, and it no longer freezes when the Wi-Fi hiccups.
+					</li>
+					<li>
+						<strong>Fielding realism.</strong>
+						Fielders walk in with the bowler and take the ball the way it comes to them, and
+						catches can now be dropped — held 60% of the time on Easy, 75% on Medium and 85% on Hard.
+					</li>
+					<li>
+						<strong>Companion and accessibility.</strong>
+						Companion controls for venues that work over local Wi-Fi without internet, and a Bat
+						Shield setting that widens the bat to make the ball easier to hit.
+					</li>
+				</ul>
+			</section>
+
+			<section class="panel glass" id="links">
+				<p class="kicker">04 / 04</p>
+				<h2>Links</h2>
+				<div class="store-links">
+					<a href="https://www.meta.com/experiences/cricket-x/6986676891412191/" class="btn btn-primary" target="_blank" rel="noopener">Meta Quest Store</a>
+					<a href="https://www.cricketx.net/" class="btn btn-ghost" target="_blank" rel="noopener">cricketx.net</a>
+				</div>
+			</section>
 		</div>
 	</main>
+
+	<section class="chapter left next-level" data-chapter="next" data-form="breath-of-estova">
+		<div class="container"><div class="panel glass">
+			<a class="panel-link" href="breath-of-estova.html" tabindex="-1" aria-hidden="true"></a>
+			<p class="kicker">Next level · 05 / 09</p>
+			<h2><a href="breath-of-estova.html">Breath of Estova</a></h2>
+			<p class="sub">A 2D MMORPG by Magami Studios: architecture upgrades and long-term systems for a live game.</p>
+			<div class="actions">
+				<a href="breath-of-estova.html" class="btn btn-primary">Next project →</a>
+				<a href="../index.html#projects" class="btn btn-ghost">All projects</a>
+			</div>
+		</div></div>
+	</section>
 
 	<footer>
 		<div class="container">
@@ -103,5 +178,20 @@
 	</footer>
 
 	<script src="../assets/js/main.js"></script>
+	<script type="importmap">
+		{
+			"imports": {
+				"three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+				"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+			}
+		}
+	</script>
+	<script type="module">
+		// The particles need WebGL2 with float render targets; without them the page stays a plain, readable site
+		const gl = document.createElement('canvas').getContext('webgl2');
+		const ok = gl && gl.getExtension('EXT_color_buffer_float');
+		if (ok) import('../assets/js/odyssey/case.js').catch(() => document.documentElement.classList.add('no-webgl'));
+		else document.documentElement.classList.add('no-webgl');
+	</script>
 </body>
 </html>

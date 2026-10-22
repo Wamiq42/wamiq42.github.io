@@ -24,56 +24,98 @@ if (nav) {
 	onScroll();
 }
 
-// Scroll-reveal animation, staggered within each container
-const observer = new IntersectionObserver(
-	entries => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('visible');
-				observer.unobserve(entry.target);
-			}
-		});
-	},
-	{ threshold: 0.12 }
-);
-
-const groupCounts = new Map();
-document.querySelectorAll('.reveal').forEach(el => {
-	const group = el.parentElement;
-	const index = groupCounts.get(group) || 0;
-	el.style.setProperty('--reveal-delay', `${Math.min(index * 90, 450)}ms`);
-	groupCounts.set(group, index + 1);
-	observer.observe(el);
-});
-
-// 3D tilt on cards — they rotate toward the cursor
+// Glass panels behave like a game HUD: they swing in as their chapter arrives, tilt toward the cursor with a
+// glare and an edge light following it, and give a little under a click
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+const panels = document.querySelectorAll('.panel.glass');
 
-if (!reduceMotion && canHover) {
-	document.querySelectorAll('.card, .featured').forEach(el => {
-		const maxTilt = el.classList.contains('featured') ? 3 : 8;
+if (panels.length && !reduceMotion) {
+	document.documentElement.classList.add('panels-3d');
+	// The hidden starting state applies at once; only changes after the first frames animate
+	requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add('panels-live')));
+
+	const entrance = new IntersectionObserver(
+		entries => entries.forEach(entry => {
+			if (!entry.isIntersecting) return;
+			entry.target.classList.add('in');
+			entrance.unobserve(entry.target);
+		}),
+		{ rootMargin: '0px 0px -12% 0px' }
+	);
+
+	panels.forEach(panel => {
+		entrance.observe(panel);
+
+		let pressTimer = null;
+		panel.addEventListener('click', e => {
+			if (e.target.closest('a, button, video')) return;
+			panel.classList.remove('pressed');
+			void panel.offsetWidth; // restart the flash on rapid clicks
+			panel.classList.add('pressed');
+			clearTimeout(pressTimer);
+			pressTimer = setTimeout(() => panel.classList.remove('pressed'), 650);
+		});
+
+		if (!canHover) return;
 		let rafId = null;
 		let lastEvent = null;
 
-		el.addEventListener('mousemove', e => {
+		panel.addEventListener('pointermove', e => {
 			lastEvent = e;
 			if (rafId) return;
 			rafId = requestAnimationFrame(() => {
 				rafId = null;
-				const rect = el.getBoundingClientRect();
+				const rect = panel.getBoundingClientRect();
+				// Tall panels tilt less, so long text doesn't wobble while it's being read
+				const maxTilt = 5.5 - 4 * Math.min(1, Math.max(0, (rect.height - 500) / 850));
 				const px = (lastEvent.clientX - rect.left) / rect.width - 0.5;
 				const py = (lastEvent.clientY - rect.top) / rect.height - 0.5;
-				el.style.transition = 'transform 0.1s ease-out';
-				el.style.transform =
-					`perspective(900px) rotateX(${(-py * maxTilt).toFixed(2)}deg) rotateY(${(px * maxTilt).toFixed(2)}deg) translateY(-4px)`;
+				const s = panel.style;
+				s.setProperty('--px', px.toFixed(3));
+				s.setProperty('--py', py.toFixed(3));
+				s.setProperty('--mx', `${((px + 0.5) * 100).toFixed(1)}%`);
+				s.setProperty('--my', `${((py + 0.5) * 100).toFixed(1)}%`);
+				s.setProperty('--rx', `${(-py * maxTilt).toFixed(2)}deg`);
+				s.setProperty('--ry', `${(px * maxTilt).toFixed(2)}deg`);
 			});
 		});
 
-		el.addEventListener('mouseleave', () => {
+		panel.addEventListener('pointerenter', () => panel.classList.add('hovering'));
+		panel.addEventListener('pointerleave', () => {
 			if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
-			el.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
-			el.style.transform = '';
+			panel.classList.remove('hovering');
+			['--px', '--py', '--rx', '--ry'].forEach(p => panel.style.removeProperty(p));
 		});
 	});
+}
+
+// Project pages: a quest log of the page's sections on wide screens, lit for the one being read
+const reading = document.querySelector('.reading');
+if (reading) {
+	const sections = [...reading.querySelectorAll('.panel[id]')];
+	const log = document.createElement('nav');
+	log.className = 'quest-log';
+	log.setAttribute('aria-label', 'Sections on this page');
+	const links = sections.map((section, i) => {
+		const a = document.createElement('a');
+		a.href = `#${section.id}`;
+		const num = document.createElement('b');
+		num.textContent = String(i + 1).padStart(2, '0');
+		const label = document.createElement('span');
+		label.textContent = section.querySelector('h2').textContent;
+		a.append(num, label);
+		log.appendChild(a);
+		return a;
+	});
+	document.body.appendChild(log);
+
+	const current = new IntersectionObserver(
+		entries => entries.forEach(entry => {
+			if (entry.isIntersecting) links.forEach(a => a.classList.toggle('active', a.hash === `#${entry.target.id}`));
+		}),
+		{ rootMargin: '-45% 0px -50% 0px' }
+	);
+	sections.forEach(section => current.observe(section));
+	new IntersectionObserver(([entry]) => log.classList.toggle('show', entry.isIntersecting), { rootMargin: '-40% 0px -40% 0px' }).observe(reading);
 }

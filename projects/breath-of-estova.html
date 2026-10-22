@@ -4,7 +4,16 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Breath of Estova | Wamiq Uddin</title>
-	<meta name="description" content="Breath of Estova — a 2D MMORPG in development at Magami Studios. Wamiq Uddin led architectural upgrades and core gameplay development." />
+	<meta name="description" content="Breath of Estova — a 2D MMORPG by Magami Studios. Wamiq Uddin led architectural upgrades and core gameplay development." />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Wamiq Uddin" />
+	<meta property="og:title" content="Breath of Estova | Wamiq Uddin" />
+	<meta property="og:description" content="Breath of Estova — a 2D MMORPG by Magami Studios. Wamiq Uddin led architectural upgrades and core gameplay development." />
+	<meta property="og:url" content="https://wamiq42.github.io/projects/breath-of-estova.html" />
+	<meta property="og:image" content="https://wamiq42.github.io/images/og/breath-of-estova.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -12,12 +21,21 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="../assets/css/style.css" />
+	<link rel="stylesheet" href="../assets/css/odyssey.css" />
+	<link rel="stylesheet" href="../assets/css/case.css" />
 </head>
-<body>
+<body data-form="breath-of-estova">
+
+	<div class="stage" aria-hidden="true"></div>
+	<div class="counter" aria-hidden="true"><b id="count">36,864</b>particles · <span id="form">forming</span></div>
+	<div class="hint-chip" aria-hidden="true"><b>MOVE</b> to blow · <b>CLICK</b> to ping</div>
 
 	<nav class="nav">
 		<div class="nav-inner">
 			<a href="../index.html" class="nav-logo">Wamiq Uddin<span>.</span></a>
+			<button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+				<span></span><span></span><span></span>
+			</button>
 			<ul class="nav-links">
 				<li><a href="../index.html#projects">Projects</a></li>
 				<li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
@@ -25,16 +43,16 @@
 		</div>
 	</nav>
 
-	<header class="detail-hero">
-		<div class="container">
+	<header class="chapter left case-hero" data-chapter="hero">
+		<div class="container"><div class="panel glass">
 			<a href="../index.html#projects" class="back">← Back to projects</a>
 			<p class="role-label">Unity Developer — architecture &amp; gameplay</p>
 			<h1>Breath of Estova</h1>
 			<div class="meta-row">
-				<span><strong>Studio:</strong> Magami Studios</span>
-				<span><strong>Genre:</strong> 2D MMORPG</span>
-				<span><strong>Engine:</strong> Unity 2D</span>
-				<span><strong>Status:</strong> In development</span>
+				<span><strong>Studio</strong> Magami Studios</span>
+				<span><strong>Genre</strong> 2D MMORPG</span>
+				<span><strong>Engine</strong> Unity 2D</span>
+				<span><strong>My time there</strong> Nov 2025 — Jun 2026</span>
 			</div>
 			<div class="tags">
 				<span class="tag">Architecture</span>
@@ -42,63 +60,89 @@
 				<span class="tag">MMORPG</span>
 				<span class="tag">Unity 2D</span>
 			</div>
-		</div>
-	</header>
-
-	<main class="detail-body">
-		<div class="container">
-			<h2>Overview</h2>
-			<p>
-				Breath of Estova is a 2D pixel-art MMORPG in development at Magami Studios —
-				a cozy online world set on Kohira's Isle, with towns, dungeons, and boss
-				encounters to explore with other players. As the game is still unreleased,
-				I can only share what the studio has made public.
-			</p>
-
-			<figure class="shot">
-				<img src="../images/estova-map.png" alt="Hand-drawn world map of Kohira's Isle, the setting of Breath of Estova" />
-				<figcaption>Kohira's Isle — the game's world map.</figcaption>
-			</figure>
-
-			<div class="gallery">
-				<figure>
-					<img src="../images/estova-party.png" alt="Pixel-art scene of player characters on a forest path" />
-				</figure>
-				<figure>
-					<img src="../images/estova-village.png" alt="Pixel-art village house surrounded by trees" />
-				</figure>
-				<figure>
-					<img src="../images/estova-desert-boss.png" alt="Desert boss encounter with a giant crab" />
-				</figure>
-				<figure>
-					<img src="../images/estova-spider-boss.png" alt="Cave boss encounter with a giant spider" />
-				</figure>
-			</div>
-
-			<h2>My contribution</h2>
-			<ul class="features">
-				<li>
-					<strong>Architectural upgrades.</strong>
-					Drove key architecture changes to improve performance, maintainability, and
-					production scalability across the codebase.
-				</li>
-				<li>
-					<strong>Long-term live systems.</strong>
-					Designed and built robust systems intended to support continuous product growth
-					and stability — the foundation an MMORPG needs to keep shipping content.
-				</li>
-				<li>
-					<strong>Core gameplay &amp; features.</strong>
-					Implemented gameplay elements, mechanics, and major consumer-facing features.
-				</li>
-			</ul>
-
-			<h2>Links</h2>
-			<div class="store-links">
+			<div class="actions">
 				<a href="https://breathofestova.com/" class="btn btn-primary" target="_blank" rel="noopener">Official Website</a>
 			</div>
+		</div></div>
+		<div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
+	</header>
+
+	<main class="detail-body reading" data-chapter="read">
+		<div class="container">
+			<section class="panel glass" id="overview">
+				<p class="kicker">01 / 03</p>
+				<h2>Overview</h2>
+				<p>
+					Breath of Estova is a 2D pixel-art MMORPG by Magami Studios — a cozy online
+					world set on Kohira's Isle, with towns, dungeons, and boss encounters to explore
+					with other players. The game was unreleased while I worked on it, so I can only
+					share what the studio has made public.
+				</p>
+
+				<figure class="shot">
+					<img src="../images/estova-map.webp" alt="Hand-drawn world map of Kohira's Isle, the setting of Breath of Estova" />
+					<figcaption>Kohira's Isle — the game's world map.</figcaption>
+				</figure>
+
+				<div class="gallery">
+					<figure>
+						<img src="../images/estova-party.webp" alt="Pixel-art scene of player characters on a forest path" />
+					</figure>
+					<figure>
+						<img src="../images/estova-village.webp" alt="Pixel-art village house surrounded by trees" />
+					</figure>
+					<figure>
+						<img src="../images/estova-desert-boss.webp" alt="Desert boss encounter with a giant crab" />
+					</figure>
+					<figure>
+						<img src="../images/estova-spider-boss.webp" alt="Cave boss encounter with a giant spider" />
+					</figure>
+				</div>
+			</section>
+
+			<section class="panel glass" id="my-contribution">
+				<p class="kicker">02 / 03</p>
+				<h2>My contribution</h2>
+				<ul class="features">
+					<li>
+						<strong>Architectural upgrades.</strong>
+						Drove key architecture changes to improve performance, maintainability, and
+						production scalability across the codebase.
+					</li>
+					<li>
+						<strong>Long-term live systems.</strong>
+						Designed and built robust systems intended to support continuous product growth
+						and stability — the foundation an MMORPG needs to keep shipping content.
+					</li>
+					<li>
+						<strong>Core gameplay &amp; features.</strong>
+						Implemented gameplay elements, mechanics, and major consumer-facing features.
+					</li>
+				</ul>
+			</section>
+
+			<section class="panel glass" id="links">
+				<p class="kicker">03 / 03</p>
+				<h2>Links</h2>
+				<div class="store-links">
+					<a href="https://breathofestova.com/" class="btn btn-primary" target="_blank" rel="noopener">Official Website</a>
+				</div>
+			</section>
 		</div>
 	</main>
+
+	<section class="chapter left next-level" data-chapter="next" data-form="mobile-games">
+		<div class="container"><div class="panel glass">
+			<a class="panel-link" href="mobile-games.html" tabindex="-1" aria-hidden="true"></a>
+			<p class="kicker">Next level · 06 / 09</p>
+			<h2><a href="mobile-games.html">Mobile Game Collection</a></h2>
+			<p class="sub">4 mobile titles shipped on iOS and Android at Game District, including Piggy Panda.</p>
+			<div class="actions">
+				<a href="mobile-games.html" class="btn btn-primary">Next project →</a>
+				<a href="../index.html#projects" class="btn btn-ghost">All projects</a>
+			</div>
+		</div></div>
+	</section>
 
 	<footer>
 		<div class="container">
@@ -107,5 +151,20 @@
 	</footer>
 
 	<script src="../assets/js/main.js"></script>
+	<script type="importmap">
+		{
+			"imports": {
+				"three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+				"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+			}
+		}
+	</script>
+	<script type="module">
+		// The particles need WebGL2 with float render targets; without them the page stays a plain, readable site
+		const gl = document.createElement('canvas').getContext('webgl2');
+		const ok = gl && gl.getExtension('EXT_color_buffer_float');
+		if (ok) import('../assets/js/odyssey/case.js').catch(() => document.documentElement.classList.add('no-webgl'));
+		else document.documentElement.classList.add('no-webgl');
+	</script>
 </body>
 </html>

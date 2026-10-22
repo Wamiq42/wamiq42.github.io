@@ -5,6 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Wamiq Uddin — Game Developer</title>
 	<meta name="description" content="Wamiq Uddin is a game developer with 4+ years of experience shipping PC, XR, and mobile games on Android, iOS, and Meta Quest — including Baseball X and Cricket X." />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Wamiq Uddin" />
+	<meta property="og:title" content="Wamiq Uddin — Game Developer" />
+	<meta property="og:description" content="Wamiq Uddin is a game developer with 4+ years of experience shipping PC, XR, and mobile games on Android, iOS, and Meta Quest — including Baseball X and Cricket X." />
+	<meta property="og:url" content="https://wamiq42.github.io/" />
+	<meta property="og:image" content="https://wamiq42.github.io/images/og/home.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -12,8 +21,13 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="assets/css/style.css" />
+	<link rel="stylesheet" href="assets/css/odyssey.css" />
 </head>
 <body>
+
+	<div class="stage" aria-hidden="true"></div>
+	<div class="counter" aria-hidden="true"><b id="count">65,536</b>particles · <span id="form">forming</span></div>
+	<div class="hint-chip" aria-hidden="true"><b>MOVE</b> to blow · <b>CLICK</b> to ping</div>
 
 	<!-- Nav -->
 	<nav class="nav">
@@ -32,263 +46,235 @@
 		</div>
 	</nav>
 
-	<!-- Hero -->
-	<header class="hero">
-		<div class="container">
-			<p class="eyebrow">Game Developer · PC, XR &amp; Mobile</p>
-			<h1>Wamiq Uddin</h1>
-			<p class="tagline">I build games that <strong>ship</strong> — from mobile titles to VR sports simulators.</p>
-			<p class="lede">
-				Game developer with 4+ years in the industry, currently at XRev Studios.
-				Working mainly in Unity, I've shipped titles on Android, iOS, and Meta Quest —
-				most recently leading development of Baseball X, a physics-driven VR baseball simulator.
-			</p>
-			<div class="actions">
-				<a href="#projects" class="btn btn-primary">View My Work</a>
-				<a href="assets/Wamiq-Uddin-Resume.pdf" class="btn btn-ghost" download>Download Resume</a>
-				<a href="#contact" class="btn btn-ghost">Get in Touch</a>
-			</div>
-		</div>
-	</header>
+	<main class="site">
 
-	<!-- Experience -->
-	<section id="experience" class="block alt">
-		<div class="container">
-			<div class="section-head reveal">
+		<!-- Hero · form: XR headset -->
+		<header class="chapter hero-chapter left" data-chapter="hero">
+			<div class="container"><div class="panel">
+				<p class="kicker">Game Developer · XR, Mobile &amp; Location-Based</p>
+				<h1>Wamiq<br />Uddin</h1>
+				<p class="tagline">I build games that <strong>ship</strong> — for VR headsets, phones and real-world venues.</p>
+				<p class="lede">
+					Game developer with 4+ years in the industry, currently at XRev Studios.
+					Working mainly in Unity, I've shipped titles on Android, iOS, and Meta Quest —
+					including Baseball X, a physics-driven VR baseball simulator where I was the lead developer.
+				</p>
+				<div class="actions">
+					<a href="#projects" class="btn btn-primary">View My Work</a>
+					<a href="assets/Wamiq-Uddin-Resume.pdf" class="btn btn-ghost" download>Download Resume</a>
+					<a href="#contact" class="btn btn-ghost">Get in Touch</a>
+				</div>
+			</div></div>
+			<div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
+		</header>
+
+		<!-- Experience · form: career helix -->
+		<section id="experience" class="chapter right wide" data-chapter="experience">
+			<div class="container"><div class="panel glass">
+				<p class="kicker">Form 02 · Four years, one helix</p>
 				<h2>Experience</h2>
-				<p>4+ years of professional game development across PC, XR, and mobile.</p>
-			</div>
-			<ul class="timeline">
-				<li class="current reveal">
-					<span class="when">Jun 2026 — Present</span>
-					<h3>XRev Studios <span class="badge">Current</span></h3>
-					<p class="role">Unity Developer · VR</p>
-					<ul>
-						<li>Returned to XRev to continue work on the studio's VR sports titles.</li>
-					</ul>
-				</li>
-				<li class="reveal">
-					<span class="when">Nov 2025 — Jun 2026</span>
-					<h3>Magami Studios</h3>
-					<p class="role">Unity Developer · 2D MMORPG</p>
-					<ul>
-						<li>Drove architectural upgrades on <em>Breath of Estova</em>, a 2D MMORPG, improving performance, maintainability, and production scalability.</li>
-						<li>Designed long-term systems built to support continuous live-product growth.</li>
-						<li>Implemented core gameplay mechanics and consumer-facing features.</li>
-					</ul>
-				</li>
-				<li class="reveal">
-					<span class="when">May 2024 — Nov 2025</span>
-					<h3>XRev Studios</h3>
-					<p class="role">Unity Developer · VR</p>
-					<ul>
-						<li>Sole developer of <em>Baseball X</em>: rebuilt bat–ball physics, built fielding/scoring systems, game modes, backend integration, and a companion app.</li>
-						<li>Co-developed major systems on <em>Cricket X</em> — fielding, physics optimization, and animation work.</li>
-						<li>Engineered gameplay analysis features for player performance tracking and real-time feedback.</li>
-					</ul>
-				</li>
-				<li class="reveal">
-					<span class="when">Apr 2022 — Apr 2024</span>
-					<h3>Game District</h3>
-					<p class="role">Unity Developer · Mobile</p>
-					<ul>
-						<li>Developed, optimized, and launched 4 mobile titles from concept to release on iOS and Android.</li>
-						<li>Maintained and refactored legacy codebases for frame rate and device compatibility.</li>
-						<li>Worked in an agile, multi-developer team with Git/GitHub workflows.</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</section>
+				<p class="sub">4+ years of professional game development across PC, XR, and mobile.</p>
+				<ul class="timeline">
+					<li class="current">
+						<span class="when">Jun 2026 — Present</span>
+						<h3>XRev Studios <span class="badge">Current</span></h3>
+						<p class="role">Unity Developer · VR &amp; Location-Based Entertainment</p>
+						<ul>
+							<li>Built a data-driven scenario system for <em>Baseball X</em>: a JSON scenario language with rule and objective engines, and a designer editor that publishes new modes without new code.</li>
+							<li>Built two-headset local multiplayer for <em>Cricket X</em>, and cut the live TV spectator view's delay from ~0.3 s to ~30 ms.</li>
+							<li>Built the original game foundation of <em>Cricket Reborn</em>, a real-ball cricket simulator, part-time in Jan 2026 — and since June, its bay game, Android operator tablet app and venue TV.</li>
+							<li>Built the booking-to-bay link with Just Beat It, Karachi: online bookings and payments flow to each bay, and the game enforces the paid time.</li>
+						</ul>
+					</li>
+					<li>
+						<span class="when">Nov 2025 — Jun 2026</span>
+						<h3>Magami Studios</h3>
+						<p class="role">Unity Developer · 2D MMORPG</p>
+						<ul>
+							<li>Drove architectural upgrades on <em>Breath of Estova</em>, a 2D MMORPG, improving performance, maintainability, and production scalability.</li>
+							<li>Designed long-term systems built to support continuous live-product growth.</li>
+							<li>Implemented core gameplay mechanics and consumer-facing features.</li>
+						</ul>
+					</li>
+					<li>
+						<span class="when">May 2024 — Oct 2025</span>
+						<h3>XRev Studios</h3>
+						<p class="role">Unity Developer · VR</p>
+						<ul>
+							<li>Lead developer of <em>Baseball X</em>: rebuilt bat–ball physics, built fielding/scoring systems, game modes, backend integration, and a companion app.</li>
+							<li>Co-developed major systems on <em>Cricket X</em> — fielding, physics optimization, and animation work.</li>
+							<li>Engineered gameplay analysis features for player performance tracking and real-time feedback.</li>
+						</ul>
+					</li>
+					<li>
+						<span class="when">Apr 2022 — Apr 2024</span>
+						<h3>Game District</h3>
+						<p class="role">Unity Developer · Mobile</p>
+						<ul>
+							<li>Developed, optimized, and launched 4 mobile titles from concept to release on iOS and Android.</li>
+							<li>Maintained and refactored legacy codebases for frame rate and device compatibility.</li>
+							<li>Worked in an agile, multi-developer team with Git/GitHub workflows.</li>
+						</ul>
+					</li>
+				</ul>
+			</div></div>
+		</section>
 
-	<!-- Projects -->
-	<section id="projects" class="block">
-		<div class="container">
-			<div class="section-head reveal">
+		<!-- Professional projects · form: controller -->
+		<section id="projects" class="chapter left wide" data-chapter="work">
+			<div class="container"><div class="panel glass">
+				<p class="kicker">Form 03 · Shipped titles</p>
 				<h2>Professional Projects</h2>
-				<p>Shipped titles I've worked on — with my actual role on each one.</p>
-			</div>
-
-			<!-- Featured: Baseball X -->
-			<div class="featured reveal">
-				<div class="media">
-					<img src="images/baseball-x-gameplay.webp" alt="Baseball X gameplay — batting view from home plate in a VR stadium" />
-				</div>
-				<div class="content">
-					<p class="role-label">Lead Developer — sole programmer</p>
-					<h3>Baseball X</h3>
-					<p>
-						A physics-accurate VR baseball simulator on Meta Quest. I was solely responsible
-						for development: true bat–ball collision physics built from scratch, fielding and
-						scoring systems, multiple game modes, backend with accounts, and a companion app
-						for remote pitch setup and swing analytics.
-					</p>
-					<div class="tags">
-						<span class="tag">Unity</span>
-						<span class="tag">VR</span>
-						<span class="tag">Meta Quest</span>
-						<span class="tag">Physics</span>
-						<span class="tag">Backend</span>
-						<span class="tag">Companion App</span>
-					</div>
-					<div class="actions">
-						<a href="projects/baseball-x.html" class="btn btn-primary">Case Study</a>
-						<a href="https://www.meta.com/experiences/baseball-x/26275725068738760/" class="btn btn-ghost" target="_blank" rel="noopener">Meta Store</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="grid">
-				<a href="projects/cricket-x.html" class="card reveal" style="color: inherit; text-decoration: none;">
-					<div class="thumb"><img src="images/cricket-x-bowling.webp" alt="Cricket X gameplay — fast bowler mid-delivery seen from the crease" /></div>
-					<div class="body">
-						<p class="role-label">Unity Developer — core systems</p>
-						<h3>Cricket X</h3>
-						<p>VR cricket simulator on Meta Quest. I co-developed major systems: the fielding system, physics optimization, and animation work.</p>
-						<span class="more">Read more</span>
-					</div>
-				</a>
-				<a href="projects/breath-of-estova.html" class="card reveal" style="color: inherit; text-decoration: none;">
-					<div class="thumb"><img src="images/estova-map.png" alt="Breath of Estova — hand-drawn world map of Kohira's Isle" /></div>
-					<div class="body">
-						<p class="role-label">Unity Developer — architecture &amp; gameplay</p>
-						<h3>Breath of Estova</h3>
-						<p>A 2D MMORPG in development at Magami Studios. I led architectural upgrades and built long-term systems for live-product growth.</p>
-						<span class="more">Read more</span>
-					</div>
-				</a>
-				<a href="projects/mobile-games.html" class="card reveal" style="color: inherit; text-decoration: none;">
-					<div class="thumb"><img src="images/SuperAppCover.png" alt="Piggy Panda: Learning Games cover art" /></div>
-					<div class="body">
-						<p class="role-label">Unity Developer — full lifecycle</p>
-						<h3>Mobile Game Collection</h3>
-						<p>4 mobile titles shipped on iOS &amp; Android at Game District, including the Piggy Panda learning-games platform.</p>
-						<span class="more">Read more</span>
-					</div>
-				</a>
-			</div>
-		</div>
-	</section>
-
-	<!-- Personal projects -->
-	<section id="personal" class="block alt">
-		<div class="container">
-			<div class="section-head reveal">
-				<h2>Personal Projects</h2>
-				<p>Projects I build on my own time — including one I've taken all the way to release.</p>
-			</div>
-			<div class="grid">
-				<a href="projects/leaf-sweeper-vr.html" class="card reveal" style="color: inherit; text-decoration: none;">
-					<div class="thumb"><img src="images/leaf-sweeper-vr-key-art.webp" alt="Leaf Sweeper VR: Cozy Cleanup key art — a stylized suburban garden buried in autumn leaves" /></div>
-					<div class="body">
-						<p class="role-label">Solo project · VR</p>
-						<h3>Leaf Sweeper VR: Cozy Cleanup <span class="badge released">Released</span></h3>
-						<p>A cozy garden cleanup game for Meta Quest, designed and built solo in Unity 6 — three distinct tool interaction models and ~12,400 collectible leaves kept inside a Quest frame budget.</p>
-						<span class="more">Read more</span>
-					</div>
-				</a>
-				<a href="projects/echo-room-vr.html" class="card reveal" style="color: inherit; text-decoration: none;">
-					<div class="thumb">
-						<div class="sonar-visual">
-							<span class="ring"></span>
-							<span class="ring"></span>
-							<span class="ring"></span>
-							<span class="dot"></span>
-							<span class="vlabel">ECHO ROOM VR</span>
+				<p class="sub">Shipped titles I've worked on — with my actual role on each one.</p>
+				<div class="projects">
+					<article class="proj featured-row">
+						<img src="images/baseball-x-gameplay.webp" alt="Baseball X gameplay — batting view from home plate in a VR stadium" />
+						<div>
+							<p class="role-label">Lead Developer</p>
+							<h3>Baseball X</h3>
+							<p>A physics-accurate VR baseball simulator on Meta Quest. True bat–ball collision physics built from scratch, fielding and scoring systems, multiple game modes, backend with accounts, and a companion app for remote pitch setup and swing analytics.</p>
+							<div class="tags">
+								<span class="tag">Unity</span><span class="tag">VR</span><span class="tag">Physics</span><span class="tag">Backend</span><span class="tag">Companion App</span>
+							</div>
+							<div class="links">
+								<a href="projects/baseball-x.html" class="stretched">Case study</a>
+								<a href="https://www.meta.com/experiences/baseball-x/26275725068738760/" target="_blank" rel="noopener">Meta Store</a>
+							</div>
 						</div>
-					</div>
-					<div class="body">
-						<p class="role-label">Original concept · Solo · VR</p>
-						<h3>Echo Room VR <span class="badge">In development</span></h3>
-						<p>An echolocation puzzle game — you're in pitch darkness, and sound is your only sight. My biggest personal project: original idea, designed and built entirely solo.</p>
-						<span class="more">Read more</span>
-					</div>
-				</a>
-				<a href="projects/skateboard.html" class="card reveal" style="color: inherit; text-decoration: none;">
-					<div class="thumb"><img src="images/skateboard-downhill.png" alt="Skateboard gameplay — downhill mountain road with wind turbines and hot-air balloons" /></div>
-					<div class="body">
-						<p class="role-label">Solo project · Racing</p>
-						<h3>Skateboard</h3>
-						<p>A downhill skateboard racing game built solo — physics-driven board control and race events on scenic mountain roads.</p>
-						<span class="more">Read more</span>
-					</div>
-				</a>
-				<div class="card reveal">
-					<div class="thumb"><div class="thumb-gradient g3">ZOMBIE GROUNDS</div></div>
-					<div class="body">
-						<p class="role-label">Solo project · Multiplayer</p>
-						<h3>Zombie Grounds</h3>
-						<p>The project where I learned multiplayer — netcode, state sync, and co-op survival gameplay, built end-to-end.</p>
-					</div>
+					</article>
+					<article class="proj">
+						<img src="images/cricket-reborn-sharjah.webp" alt="Cricket Reborn — in-game view of the Sharjah stadium, with the fielders set and the pitch in the foreground" />
+						<div>
+							<p class="role-label">Unity Developer — game, tablet app &amp; venue systems</p>
+							<h3>Cricket Reborn</h3>
+							<p>A real-ball cricket simulator: you bat against a real bowling machine, timed to a virtual bowler on screen. I built the original game foundation, then the operator tablet app, venue TV, and the link from online bookings to each bay.</p>
+							<div class="links"><a href="projects/cricket-reborn.html" class="stretched">Read more</a></div>
+						</div>
+					</article>
+					<article class="proj">
+						<img src="images/cricket-x-bowling.webp" alt="Cricket X gameplay — fast bowler mid-delivery seen from the crease" />
+						<div>
+							<p class="role-label">Unity Developer — core systems</p>
+							<h3>Cricket X</h3>
+							<p>VR cricket simulator on Meta Quest. I co-developed major systems: the fielding system, physics optimization, and animation work.</p>
+							<div class="links"><a href="projects/cricket-x.html" class="stretched">Read more</a></div>
+						</div>
+					</article>
+					<article class="proj">
+						<img src="images/estova-map.webp" alt="Breath of Estova — hand-drawn world map of Kohira's Isle" />
+						<div>
+							<p class="role-label">Unity Developer — architecture &amp; gameplay</p>
+							<h3>Breath of Estova</h3>
+							<p>A 2D MMORPG by Magami Studios. I led architectural upgrades and built long-term systems for live-product growth.</p>
+							<div class="links"><a href="projects/breath-of-estova.html" class="stretched">Read more</a></div>
+						</div>
+					</article>
+					<article class="proj">
+						<img src="images/SuperAppCover.webp" alt="Piggy Panda: Learning Games cover art" />
+						<div>
+							<p class="role-label">Unity Developer — full lifecycle</p>
+							<h3>Mobile Game Collection</h3>
+							<p>4 mobile titles shipped on iOS &amp; Android at Game District, including the Piggy Panda learning-games platform.</p>
+							<div class="links"><a href="projects/mobile-games.html" class="stretched">Read more</a></div>
+						</div>
+					</article>
 				</div>
-			</div>
-		</div>
-	</section>
+			</div></div>
+		</section>
 
-	<!-- Skills -->
-	<section id="skills" class="block">
-		<div class="container">
-			<div class="section-head reveal">
+		<!-- Personal: Leaf Sweeper · form: leaf -->
+		<section id="personal" class="chapter right" data-chapter="personal-leaf">
+			<div class="container"><div class="panel glass">
+				<p class="kicker">Form 04 · Move your cursor — it's the leaf blower</p>
+				<p class="role-label">Personal project · Solo · VR</p>
+				<h2><a href="projects/leaf-sweeper-vr.html">Leaf Sweeper VR</a> <span class="badge released">Early Access</span></h2>
+				<a class="shot-card" href="projects/leaf-sweeper-vr.html" tabindex="-1" aria-hidden="true"><img src="images/leaf-sweeper-vr-key-art.webp" alt="Leaf Sweeper VR: Cozy Cleanup key art — a stylized suburban garden buried in autumn leaves" /></a>
+				<p class="sub">A cozy garden cleanup game for Meta Quest, designed and built solo in Unity 6 — three distinct tool interaction models and ~12,400 collectible leaves kept inside a Quest frame budget.</p>
+				<div class="actions">
+					<a href="projects/leaf-sweeper-vr.html" class="btn btn-primary small">Read more</a>
+					<a href="https://www.meta.com/experiences/leaf-sweeper-vr-cozy-cleanup/1287094717812314/" class="btn btn-ghost small" target="_blank" rel="noopener">Meta Store</a>
+				</div>
+			</div></div>
+		</section>
+
+		<!-- Personal: Echo Room · form: sonar room -->
+		<section class="chapter left" data-chapter="personal-echo">
+			<div class="container"><div class="panel glass">
+				<p class="kicker">Form 05 · Click anywhere to send a ping</p>
+				<p class="role-label">Personal project · Original concept · Solo · VR</p>
+				<h2><a href="projects/echo-room-vr.html">Echo Room VR</a> <span class="badge released">Early Access</span></h2>
+				<a class="shot-card" href="projects/echo-room-vr.html" tabindex="-1" aria-hidden="true">
+					<div class="sonar-visual">
+						<span class="ring"></span><span class="ring"></span><span class="ring"></span>
+						<span class="dot"></span>
+						<span class="vlabel">ECHO ROOM VR</span>
+					</div>
+				</a>
+				<p class="sub">An echolocation puzzle game — you're in pitch darkness, and sound is your only sight. My biggest personal project: original idea, designed and built entirely solo.</p>
+				<div class="actions">
+					<a href="projects/echo-room-vr.html" class="btn btn-primary small">Read more</a>
+					<a href="https://www.meta.com/experiences/echo-room-vr-escape-the-dark/1293368300518289/" class="btn btn-ghost small" target="_blank" rel="noopener">Meta Store</a>
+				</div>
+			</div></div>
+		</section>
+
+		<!-- Personal: Supermarket · form: cart -->
+		<section class="chapter right" data-chapter="personal-market">
+			<div class="container"><div class="panel glass">
+				<p class="kicker">Form 06 · Supermarket Simulator VR</p>
+				<p class="role-label">Personal project · Solo · VR · Management sim</p>
+				<h2>Supermarket Simulator VR <span class="badge">Early Access soon</span></h2>
+				<div class="shot-card"><img src="images/supermarket-simulator-vr-cover.webp" alt="Supermarket Simulator VR key art — the game logo over the shop floor with customers at the checkout" /></div>
+				<p class="sub">Run your own supermarket in VR — order stock, fill shelves by hand, set prices and work the till with physical cash. Designed and built solo for Meta Quest, heading to the Meta Horizon Store in Early Access.</p>
+			</div></div>
+		</section>
+
+		<!-- Personal: Skateboard (+ Zombie Grounds) · form: skateboard -->
+		<section class="chapter left" data-chapter="personal-skate">
+			<div class="container"><div class="panel glass">
+				<p class="kicker">Form 07 · Skateboard</p>
+				<p class="role-label">Personal project · Solo · Racing</p>
+				<h2><a href="projects/skateboard.html">Skateboard</a></h2>
+				<a class="shot-card" href="projects/skateboard.html" tabindex="-1" aria-hidden="true"><img src="images/skateboard-downhill.webp" alt="Skateboard gameplay — downhill mountain road with wind turbines and hot-air balloons" /></a>
+				<p class="sub">A downhill skateboard racing game built solo — physics-driven board control and race events on scenic mountain roads.</p>
+				<div class="actions"><a href="projects/skateboard.html" class="btn btn-primary small">Read more</a></div>
+				<p class="also"><b>Also: Zombie Grounds</b> — the project where I learned multiplayer: netcode, state sync, and co-op survival gameplay, built end-to-end.</p>
+			</div></div>
+		</section>
+
+		<!-- Skills · form: skill network -->
+		<section id="skills" class="chapter right wide" data-chapter="skills">
+			<div class="container"><div class="panel glass">
+				<p class="kicker">Form 08 · The toolkit</p>
 				<h2>Skills</h2>
-			</div>
-			<div class="skills-grid">
-				<div class="skill-group reveal">
-					<h3>Engines &amp; XR</h3>
-					<div class="tags">
-						<span class="tag">Unity 3D</span>
-						<span class="tag">Unity 2D</span>
-						<span class="tag">Unreal Engine</span>
-						<span class="tag">VR</span>
-						<span class="tag">AR</span>
-						<span class="tag">Physics Systems</span>
+				<div class="skills-grid">
+					<div class="skill-group">
+						<h3>Engines &amp; XR</h3>
+						<div class="tags"><span class="tag">Unity 3D</span><span class="tag">Unity 2D</span><span class="tag">Unreal Engine</span><span class="tag">VR</span><span class="tag">AR</span><span class="tag">Physics Systems</span></div>
+					</div>
+					<div class="skill-group">
+						<h3>Programming</h3>
+						<div class="tags"><span class="tag">C# (Advanced)</span><span class="tag">C++</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">HTML / CSS</span></div>
+					</div>
+					<div class="skill-group">
+						<h3>Tools &amp; Practice</h3>
+						<div class="tags"><span class="tag">Git / GitHub</span><span class="tag">Performance Optimization</span><span class="tag">Gameplay Architecture</span><span class="tag">UI Design</span><span class="tag">Animation</span></div>
+					</div>
+					<div class="skill-group">
+						<h3>Platforms</h3>
+						<div class="tags"><span class="tag">Meta Quest</span><span class="tag">Android</span><span class="tag">iOS</span><span class="tag">Steam</span><span class="tag">Epic Games</span></div>
 					</div>
 				</div>
-				<div class="skill-group reveal">
-					<h3>Programming</h3>
-					<div class="tags">
-						<span class="tag">C# (Advanced)</span>
-						<span class="tag">C++</span>
-						<span class="tag">Java</span>
-						<span class="tag">JavaScript</span>
-						<span class="tag">HTML / CSS</span>
-					</div>
-				</div>
-				<div class="skill-group reveal">
-					<h3>Tools &amp; Practice</h3>
-					<div class="tags">
-						<span class="tag">Git / GitHub</span>
-						<span class="tag">Performance Optimization</span>
-						<span class="tag">Gameplay Architecture</span>
-						<span class="tag">UI Design</span>
-						<span class="tag">Animation</span>
-					</div>
-				</div>
-				<div class="skill-group reveal">
-					<h3>Platforms</h3>
-					<div class="tags">
-						<span class="tag">Meta Quest</span>
-						<span class="tag">Android</span>
-						<span class="tag">iOS</span>
-						<span class="tag">Steam</span>
-						<span class="tag">Epic Games</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+			</div></div>
+		</section>
 
-	<!-- Contact -->
-	<section id="contact" class="block alt">
-		<div class="container">
-			<div class="contact-wrap">
-				<div class="section-head reveal" style="margin-bottom: 0;">
-					<h2>Get in Touch</h2>
-					<p>
-						I'm always open to interesting projects, collaborations, and opportunities
-						in game development. The fastest way to reach me is email or LinkedIn.
-					</p>
-				</div>
-				<ul class="contact-list reveal">
+		<!-- Contact · form: "LET'S BUILD" -->
+		<section id="contact" class="chapter left" data-chapter="contact">
+			<div class="container"><div class="panel glass">
+				<p class="kicker">Form 09 · Say hello</p>
+				<h2>Get in Touch</h2>
+				<p class="sub">I'm always open to interesting projects, collaborations, and opportunities in game development. The fastest way to reach me is email or LinkedIn.</p>
+				<ul class="contact-list">
 					<li>
 						<div class="contact-icon">
 							<svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.24-8 5-8-5V6.5l8 5 8-5v1.74z"/></svg>
@@ -317,16 +303,26 @@
 						</div>
 					</li>
 				</ul>
-			</div>
-		</div>
-	</section>
-
-	<footer>
-		<div class="container">
-			© 2026 Wamiq Uddin · Designed &amp; built from scratch
-		</div>
-	</footer>
+				<p class="site-footer">© 2026 Wamiq Uddin · Designed &amp; built from scratch</p>
+			</div></div>
+		</section>
+	</main>
 
 	<script src="assets/js/main.js"></script>
+	<script type="importmap">
+		{
+			"imports": {
+				"three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+				"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+			}
+		}
+	</script>
+	<script type="module">
+		// The particles need WebGL2 with float render targets; without them the page stays a plain, readable site
+		const gl = document.createElement('canvas').getContext('webgl2');
+		const ok = gl && gl.getExtension('EXT_color_buffer_float');
+		if (ok) import('./assets/js/odyssey/odyssey.js').catch(() => document.documentElement.classList.add('no-webgl'));
+		else document.documentElement.classList.add('no-webgl');
+	</script>
 </body>
 </html>
